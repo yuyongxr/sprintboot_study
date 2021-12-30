@@ -42,9 +42,6 @@ public class BookController {
     @GetMapping("{id}")
     public R getById(@PathVariable Integer id){
         System.out.println("test hot deploy...");
-        System.out.println("test hot deploy...");
-        System.out.println("test hot deploy...");
-        System.out.println("test hot deploy...");
         return new R(true, bookService.getById(id));
     }
 

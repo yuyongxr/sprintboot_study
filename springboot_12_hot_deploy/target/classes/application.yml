@@ -1,5 +1,14 @@
 server:
   port: 80
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: D:\Documents\D_代码相关\J_java\sprintboot_study
+      prefix: tomcat_access_log
+      suffix: .log
+      file-date-format: -yyyy-MM-dd
+      pattern: '%{X-Real-IP}i - %{Host}i %t "%r" %{Content-Length}i %s %b %D "%{Referer}i" "%{User-Agent}i" %a "%I" "-"'
+      rotate: true
 
 spring:
   datasource:
@@ -11,12 +20,11 @@ spring:
   devtools:
     restart:
       # 设置不参与热部署的文件或文件夹
-      exclude: static/**,public/**,config/application.yml
       enabled: true
-#      enabled: false
-
+      exclude: static
   freemarker:
     cache: false
+
 
 
 mybatis-plus:
