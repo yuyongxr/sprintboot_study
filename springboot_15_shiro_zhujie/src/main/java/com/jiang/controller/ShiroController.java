@@ -1,11 +1,17 @@
-package com.jiang.springboot_14_shiro.controller;
+package com.jiang.controller;
 
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.ShiroException;
 import org.apache.shiro.authc.*;
+import org.apache.shiro.authz.AuthorizationException;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -31,6 +37,8 @@ public class ShiroController {
 
             //使用我们从页面传递来的账号和密码，生成用户的身份令牌
             UsernamePasswordToken token = new UsernamePasswordToken(username,password);
+            token.setRememberMe(true);
+            //System.out.println("controller /login:"+username+password);
 
             try {
                 /**
@@ -78,13 +86,31 @@ public class ShiroController {
         return "noPermission";
     }
 
+    @RequiresRoles(value = {"admin"})
     @RequestMapping("/admin/test")
     public @ResponseBody String adminTest(){
         return "/admin/test请求";
     }
 
+    @RequiresRoles(value = {"admin"})
+    @RequiresPermissions(value = {"admin:add"})
+    @RequestMapping("/admin/add")
+    public @ResponseBody String adminAdd(){
+        return "/admin/add请求";
+    }
+
+    //logical 默认为Logical.AND ，当权限是或的时候，需要手工修改为以下示例
+    @RequiresRoles(value = {"admin","user"},logical = Logical.OR)
     @RequestMapping("/user/test")
     public @ResponseBody String userTest(){
         return "/user/test请求";
+    }
+
+    /**
+     * 自定义异常，用于处理没有权限的异常,如不处理，会出现500的错误
+     */
+    @ExceptionHandler(value = {AuthorizationException.class})
+    public String permission(Throwable throwable){
+        return "noPermission";
     }
 }

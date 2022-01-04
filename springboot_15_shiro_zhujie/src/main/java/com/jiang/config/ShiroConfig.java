@@ -1,10 +1,12 @@
-package com.jiang.springboot_14_shiro.config;
+package com.jiang.config;
 
-import com.jiang.springboot_14_shiro.realm.MyRealm;
+import com.jiang.realm.MyRealm;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.realm.Realm;
+import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -46,12 +48,34 @@ public class ShiroConfig {
         filerChainMap.put("/static/**","anon"); // js目录下，均不需要认证
         filerChainMap.put("/logout","logout");
         // roles[admin]表示该资源需要admin角色的授权才能访问,注意，这里为角色，所有的授权均基于角色授权
-        filerChainMap.put("/admin/**","authc,roles[admin]");
-        filerChainMap.put("/user/**","authc,roles[user]");
+//        filerChainMap.put("/admin/**","authc,roles[admin]");
+//        filerChainMap.put("/user/**","authc,roles[user]");
 //        filerChainMap.put("/**","authc");
 
         shiroFilter.setFilterChainDefinitionMap(filerChainMap);
 
         return shiroFilter;
     }
+
+    /**
+     * 开启shiro注解支持
+     * @return
+     */
+    @Bean
+    public DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator(){
+        DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator = new DefaultAdvisorAutoProxyCreator();
+        defaultAdvisorAutoProxyCreator.setProxyTargetClass(true);
+        return defaultAdvisorAutoProxyCreator;
+    }
+
+    /**
+     * 开启spring AOP支持
+     */
+    @Bean
+    public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(SecurityManager securityManager){
+        AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor = new AuthorizationAttributeSourceAdvisor();
+        authorizationAttributeSourceAdvisor.setSecurityManager(securityManager);
+        return authorizationAttributeSourceAdvisor;
+    }
 }
+

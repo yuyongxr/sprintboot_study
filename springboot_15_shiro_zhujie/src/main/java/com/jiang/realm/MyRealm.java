@@ -1,13 +1,9 @@
-package com.jiang.springboot_14_shiro.realm;
+package com.jiang.realm;
 
 import org.apache.shiro.authc.*;
-import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
-import org.apache.shiro.crypto.hash.SimpleHash;
-import org.apache.shiro.realm.AuthenticatingRealm;
 import org.apache.shiro.realm.AuthorizingRealm;
-import org.apache.shiro.realm.Realm;
 import org.apache.shiro.subject.PrincipalCollection;
 
 import java.util.HashSet;
@@ -36,7 +32,7 @@ public class MyRealm extends AuthorizingRealm {
         //使用传递来的token获取用户提供的password
         String password = new String(token.getPassword());
 
-        //System.out.println(username + ":" + password);
+        System.out.println(username + ":" + password);
 
         /**
          * 认证账号，这里应该从数据库中获取数据,这里只是模拟一下
@@ -106,8 +102,14 @@ public class MyRealm extends AuthorizingRealm {
             roles.add("user");
         }
 
+        Set<String> permission = new HashSet<>();
+        if ("admin".equals(primaryPrincipal)){
+            permission.add("admin:add");
+        }
+
         SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
         simpleAuthorizationInfo.setRoles(roles);//将存储角色信息的SET集合，设置到simpleAuthorizationInfo中
+        simpleAuthorizationInfo.setStringPermissions(permission);//设置用户子权限
         return simpleAuthorizationInfo;
     }
 }
