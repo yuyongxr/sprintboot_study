@@ -1,0 +1,6 @@
+[2022-01-05 16:32:22.427] [FATAL]  Log4j2Test - fatal
+[2022-01-05 16:32:22.430] [ERROR]  Log4j2Test - error
+[2022-01-05 16:32:22.430] [WARN ]  Log4j2Test - warn
+[2022-01-05 16:32:22.430] [INFO ]  Log4j2Test - info
+[2022-01-05 16:32:22.430] [DEBUG]  Log4j2Test - debug
+[2022-01-05 16:32:22.430] [TRACE]  Log4j2Test - trace

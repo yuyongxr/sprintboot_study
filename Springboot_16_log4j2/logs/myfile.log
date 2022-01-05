@@ -1,0 +1,9 @@
+[2022-01-05 16:43:17.564] [ERROR]  Slf4jTest - error
+[2022-01-05 16:43:17.568] [INFO ]  Slf4jTest - info
+[2022-01-05 16:43:17.568] [WARN ]  Slf4jTest - warn
+[2022-01-05 16:44:28.933] [ERROR]  Slf4jTest - error
+[2022-01-05 16:44:28.936] [INFO ]  Slf4jTest - info
+[2022-01-05 16:44:28.936] [WARN ]  Slf4jTest - warn
+[2022-01-05 16:44:54.669] [ERROR]  Slf4jTest - error
+[2022-01-05 16:44:54.672] [INFO ]  Slf4jTest - info
+[2022-01-05 16:44:54.672] [WARN ]  Slf4jTest - warn

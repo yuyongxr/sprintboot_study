@@ -1,12 +1,19 @@
-2021-12-24 17:28:23.638  INFO 17052 --- [restartedMain] com.jiang.Springboot11LogApplication     : Starting Springboot11LogApplication using Java 1.8.0_201 on jzh with PID 17052 (D:\Documents\D_代码相关\J_java\sprintboot_study\springboot_11_log\target\classes started by jiangzhehao in D:\Documents\D_代码相关\J_java\sprintboot_study)
-2021-12-24 17:28:23.641  INFO 17052 --- [restartedMain] com.jiang.Springboot11LogApplication     : No active profile set, falling back to default profiles: default
-2021-12-24 17:28:23.698  INFO 17052 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-12-24 17:28:23.699  INFO 17052 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-12-24 17:28:24.357  INFO 17052 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-12-24 17:28:24.363  INFO 17052 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-12-24 17:28:24.363  INFO 17052 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2021-12-24 17:28:24.410  INFO 17052 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-12-24 17:28:24.410  INFO 17052 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 710 ms
-2021-12-24 17:28:24.604  INFO 17052 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-12-24 17:28:24.626  INFO 17052 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-12-24 17:28:24.634  INFO 17052 --- [restartedMain] com.jiang.Springboot11LogApplication     : Started Springboot11LogApplication in 1.435 seconds (JVM running for 2.48)
+2022-01-05 17:13:39.515  INFO 16592 --- [restartedMain] com.jiang.Springboot11LogApplication     : Starting Springboot11LogApplication using Java 1.8.0_201 on jzh with PID 16592 (D:\Documents\D_代码相关\J_java\sprintboot_study\springboot_11_slf4j\target\classes started by jiangzhehao in D:\Documents\D_代码相关\J_java\sprintboot_study)
+2022-01-05 17:13:39.518  INFO 16592 --- [restartedMain] com.jiang.Springboot11LogApplication     : No active profile set, falling back to default profiles: default
+2022-01-05 17:13:39.568  INFO 16592 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-01-05 17:13:39.568  INFO 16592 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-01-05 17:13:40.215  INFO 16592 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-05 17:13:40.220  INFO 16592 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-05 17:13:40.220  INFO 16592 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-05 17:13:40.268  INFO 16592 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-05 17:13:40.268  INFO 16592 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 699 ms
+2022-01-05 17:13:40.457  INFO 16592 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-01-05 17:13:40.480  INFO 16592 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-05 17:13:40.487  INFO 16592 --- [restartedMain] com.jiang.Springboot11LogApplication     : Started Springboot11LogApplication in 1.352 seconds (JVM running for 2.186)
+2022-01-05 17:13:51.347  INFO 16592 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-05 17:13:51.347  INFO 16592 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-05 17:13:51.348  INFO 16592 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-05 17:13:51.361 DEBUG 16592 --- [http-nio-8080-exec-1] com.jiang.controller.BookController      : debug ......
+2022-01-05 17:13:51.361  INFO 16592 --- [http-nio-8080-exec-1] com.jiang.controller.BookController      : info ......
+2022-01-05 17:13:51.361  WARN 16592 --- [http-nio-8080-exec-1] com.jiang.controller.BookController      : warn ......
+2022-01-05 17:13:51.362 ERROR 16592 --- [http-nio-8080-exec-1] com.jiang.controller.BookController      : error ......
